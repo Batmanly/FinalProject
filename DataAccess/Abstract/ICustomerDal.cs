@@ -5,9 +5,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IProductDal : IEntityRepository<Product>//Dal or Dao
+    interface ICustomerDal:IEntityRepository<Customer>
     {
-        //interface methods are public in defaults.
-       
     }
 }

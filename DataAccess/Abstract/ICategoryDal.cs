@@ -5,9 +5,8 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IProductDal : IEntityRepository<Product>//Dal or Dao
+    public interface ICategoryDal:IEntityRepository<Category>
     {
-        //interface methods are public in defaults.
        
     }
 }
