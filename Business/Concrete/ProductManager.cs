@@ -32,10 +32,10 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
-            //if(DateTime.Now.Hour == 14)
-            //{
-            //    return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
-            //  }
+            if (DateTime.Now.Hour == 22)
+            {
+                return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
+            }
             //Is kodlari
             // bir is sinifi baska sinifi newlemez
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductsListed);
@@ -60,7 +60,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails());
         }
 
-        public IDataResult<Product> GeyById(int productId)
+        public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
         }

@@ -28,7 +28,9 @@ namespace WebAPI
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {   //AutoFac >> AOP >> imkani sunar.
+            //Autofac,Ninject,CastleWindsor,StructureMap,LightInject,DrjInject >> IoC Container
+            //AOP >> 
             services.AddControllers();
             services.AddSingleton<IProductService,ProductManager>();//biri Iproductservice isterse ProductManager newlenir arka planda data tutmuyorsak kullanadacaz
             services.AddSingleton<IProductDal, EfProductDal>();
