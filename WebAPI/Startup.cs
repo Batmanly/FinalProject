@@ -31,9 +31,10 @@ namespace WebAPI
         {   //AutoFac >> AOP >> imkani sunar.
             //Autofac,Ninject,CastleWindsor,StructureMap,LightInject,DrjInject >> IoC Container
             //AOP >> 
+            //PostShar >> Ucretli IOC urunu
             services.AddControllers();
-            services.AddSingleton<IProductService,ProductManager>();//biri Iproductservice isterse ProductManager newlenir arka planda data tutmuyorsak kullanadacaz
-            services.AddSingleton<IProductDal, EfProductDal>();
+            //services.AddSingleton<IProductService,ProductManager>();//biri Iproductservice isterse ProductManager newlenir arka planda data tutmuyorsak kullanadacaz
+            //services.AddSingleton<IProductDal, EfProductDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

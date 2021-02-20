@@ -1,11 +1,16 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
+
 
 namespace Business.Concrete
 {
@@ -14,11 +19,19 @@ namespace Business.Concrete
         IProductDal _productDal;
         public ProductManager(IProductDal productDal)
         {
+
             _productDal = productDal;
         }
-
+            
+        [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
+
+            //ValidationTool.Validate(new ProductValidator(), product);
+
+            //business Codes
+            //Validation >> business ve validasyon kodu ayri yazilir
+
             if(product.ProductName.Length<2)
             {
                 //Magic strings
